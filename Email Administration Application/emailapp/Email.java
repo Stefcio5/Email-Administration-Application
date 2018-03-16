@@ -1,5 +1,11 @@
 package emailapp;
 
+import jdk.nashorn.internal.ir.debug.JSONWriter;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -50,7 +56,7 @@ public class Email {
             return "development";
         }
         else if (departmentChoice == 3){
-            return "Accounting";
+            return "accounting";
         }
         else {
             return "";
@@ -114,5 +120,20 @@ public class Email {
         return "DISPLAY NAME: " + firstName + " " + lastName + "\n" +
                 "COMPANY EMAIL: " + email + "\n" +
                 "MAILBOX CAPACITY: " + mailboxCapacity + " mb";
+    }
+
+    // Save worker data to file
+    public void saveWorkerToFile(){
+        try {
+            BufferedWriter out = new BufferedWriter(new FileWriter( firstName + lastName + ".txt"));
+            out.write("Name: " + firstName + " " + lastName + " \n");
+            out.write("Department: " + department + " \n");
+            out.write("Email: " + email + " \n");
+            out.write("Mailbox capacity: " + mailboxCapacity + " \n");
+            out.write("Password: " + password);
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

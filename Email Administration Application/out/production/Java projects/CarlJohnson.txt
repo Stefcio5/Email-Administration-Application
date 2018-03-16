@@ -1,0 +1,5 @@
+Name: Carl Johnson 
+Department:  
+Email: carl.johnson@.company.com 
+Mailbox capacity: 500 
+Password: 321

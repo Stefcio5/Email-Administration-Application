@@ -1,0 +1,5 @@
+Name: John Smith 
+Department: development 
+Email: john.smith@development.company.com 
+Mailbox capacity: 500 
+Password: 123
